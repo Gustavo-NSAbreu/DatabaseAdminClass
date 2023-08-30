@@ -157,3 +157,19 @@ INNER JOIN research r ON r.reference_year = YEAR(e.hire_date)
 INNER JOIN custumer_service cs ON cs.reference_year = YEAR(e.hire_date)
 GROUP BY YEAR(e.hire_date)
 ORDER BY YEAR(e.hire_date)
+
+-- SIMPLER VERSION
+
+-- SELECT
+--     d.dept_no,
+--     d.dept_name,
+--     YEAR(e.hire_date) AS reference_year,
+--     SUM(s.salary) AS total_salary_per_year
+-- FROM departments d
+-- INNER JOIN dept_emp de ON d.dept_no = de.dept_no
+-- INNER JOIN employees e ON de.emp_no = e.emp_no
+-- INNER JOIN salaries s ON e.emp_no = s.emp_no
+-- WHERE s.from_date <= e.hire_date 
+--    AND (s.to_date >= e.hire_date OR s.to_date IS NULL)
+-- GROUP BY d.dept_no, d.dept_name, YEAR(e.hire_date)
+-- ORDER BY d.dept_no, reference_year;
