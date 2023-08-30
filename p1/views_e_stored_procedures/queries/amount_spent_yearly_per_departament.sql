@@ -108,7 +108,7 @@ custumer_service AS (
 )
 
 SELECT 
-	  YEAR(s.from_date) AS reference_year,
+	YEAR(s.from_date) AS reference_year,
     COALESCE(m.yearly_amount, 0) AS marketing,
     COALESCE(f.yearly_amount, 0) AS finance,
     COALESCE(hr.yearly_amount, 0) AS human_resources,
