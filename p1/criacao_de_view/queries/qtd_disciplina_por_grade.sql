@@ -5,7 +5,7 @@ WITH disciplinas_obrigatorias AS
     	gd.idGrade,
 			COUNT(gd.idDisciplina) AS obrigatorias
 	FROM grade_disciplina gd
-	WHERE gd.tipo LIKE "obrigat%"
+	WHERE gd.tipo LIKE "ob%"
   GROUP BY gd.idGrade
 ),
 disciplinas_opcionais AS (
