@@ -21,7 +21,7 @@ BEGIN
             s.departament_id AS departament_id
         FROM salary_to_total_cost_percentage s
         WHERE s.departament_id = departament_number AND s.reference_year = reference_year
-        ORDER BY s.salary
+        ORDER BY s.salary DESC
         LIMIT 1
     )
     SELECT
@@ -29,7 +29,7 @@ BEGIN
         s.yearly_amount,
         hpe.employee
         INTO employees_amount,
-        	  yearly_expenses,
+        	yearly_expenses,
             most_expensive_employee
     FROM salary_to_total_cost_percentage s
     INNER JOIN total_employees_per_departament tepd ON tepd.departament_id = s.departament_id

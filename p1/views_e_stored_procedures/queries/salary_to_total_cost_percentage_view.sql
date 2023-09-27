@@ -14,5 +14,4 @@ INNER JOIN dept_emp de ON e.emp_no = de.emp_no
 INNER JOIN departments d ON de.dept_no = d.dept_no
 INNER JOIN amount_spent_yearly_per_departament asy ON asy.reference_year = YEAR(s.from_date)
 	AND d.dept_name = asy.dept_name
-GROUP BY employee
 ORDER BY employee_id;
