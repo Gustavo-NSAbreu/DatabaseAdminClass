@@ -8,7 +8,14 @@ REVOKE CREATE FROM 'bob'@'localhost' IDENTIFIED BY '1234';
 FLUSH PRIVILEGES;
 
 
-CREATE USER alice@localhost IDENTIFIED BY '1234';
+CREATE USER 'alice'@'localhost' IDENTIFIED BY '1234';
+
+GRANT SELECT ON ensino.* TO 'alice'@'localhost';
+FLUSH PRIVILEGES;
+
+GRANT SELECT ON enderecos.* TO 'alice'@'localhost';
+FLUSH PRIVILEGES;
+
 
 
 CREATE USER nina@localhost IDENTIFIED BY '1234';
