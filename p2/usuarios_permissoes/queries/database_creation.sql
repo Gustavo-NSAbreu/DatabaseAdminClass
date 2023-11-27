@@ -95,7 +95,6 @@ USE enderecos;
 CREATE TABLE pais (    id UUID PRIMARY KEY NOT NULL,    nome VARCHAR(255) NOT NULL);
 CREATE TABLE estado (    id UUID PRIMARY KEY NOT NULL,    nome VARCHAR(255) NOT NULL,    pais_id UUID NOT NULL,    FOREIGN KEY (pais_id) REFERENCES pais(id));
 CREATE TABLE cidade (    id UUID PRIMARY KEY NOT NULL,    nome VARCHAR(255) NOT NULL,    estado_id UUID NOT NULL,    FOREIGN KEY (estado_id) REFERENCES estado(id));
-
 CREATE TABLE endereco (    id UUID PRIMARY KEY NOT NULL,    rua VARCHAR(255) NOT NULL,    numero INT NOT NULL,    cep VARCHAR(10) NOT NULL,    cidade_id UUID NOT NULL,    FOREIGN KEY (cidade_id) REFERENCES cidade(id));
 
 ------------------------------------------------------------
